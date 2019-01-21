@@ -3,7 +3,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://47.96.22.102:3306/DFMALL_S?allowMultiQueries=true&useUnicode=true&useSSL=false&characterEncoding=UTF-8&useAffectedRows=true
+    url: jdbc:mysql://数据库ip:3306/库名?allowMultiQueries=true&useUnicode=true&useSSL=false&characterEncoding=UTF-8&useAffectedRows=true
     username: hzmall
     password: hYZ!ns^ZziS3
     druidusername: qazwsx
@@ -24,7 +24,7 @@ spring:
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000  # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
 
   rabbitmq:
-    address: 192.168.1.48:5672,192.168.1.49:5672
+    address: 集群ip1:5672,集群ip2:5672
     username: admin
     password: admin
     virtual-host: /
