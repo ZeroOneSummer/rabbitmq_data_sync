@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dms.data.push.process.dao.CouponDao">
+
+    <!-- 券详情表 -->
+    <select id="queryCouponDetailList" resultType="com.dms.data.push.process.entity.CouponDetail">
+        select
+          *
+        from
+          coupon_detail
+        where
+          create_time >= #{sTime}
+          and create_time &lt;= #{eTime}
+    </select>
+
+    <!-- 券仓库表 -->
+    <select id="queryCouponWarehouseList" resultType="com.dms.data.push.process.entity.CouponWarehouse">
+        select
+          *
+        from
+          coupon_warehouse
+        where
+          MID(coupon_no,2,8) >= DATE_FORMAT(#{sTime},'%Y%m%d')
+          and MID(coupon_no,2,8) &lt;= DATE_FORMAT(#{eTime},'%Y%m%d')
+    </select>
+
+    <!-- 券使用记录表 -->
+    <select id="queryCouponUseLogsList" resultType="com.dms.data.push.process.entity.CouponUseLogs">
+        select
+          *
+        from
+          coupon_use_logs
+        where
+          use_time >= #{sTime}
+          and use_time &lt;= #{eTime}
+    </select>
+
+    <!-- 券限制条件表 -->
+    <select id="queryCouponConditionList" resultType="com.dms.data.push.process.entity.CouponCondition">
+        select
+          *
+        from
+          coupon_condition
+        where
+          create_time >= #{sTime}
+          and create_time &lt;= #{eTime}
+    </select>
+
+    <!-- 券资金流水表 -->
+    <select id="queryCouponAmountlogList" resultType="com.dms.data.push.process.entity.CouponAmountlog">
+        select
+          *
+        from
+          coupon_amountlog
+        where
+          create_time >= #{sTime}
+          and create_time &lt;= #{eTime}
+    </select>
+
+    <!-- 券订单表 -->
+    <select id="queryCouponOrderList" resultType="com.dms.data.push.process.entity.CouponOrder">
+        select
+          *
+        from
+          coupon_order
+        where
+          cre_date >= #{sTime}
+          and cre_date &lt;= #{eTime}
+    </select>
+
+    <!-- 券失效表 -->
+    <select id="queryCouponOverdueList" resultType="com.dms.data.push.process.entity.CouponOverdue">
+        select
+          *
+        from
+          coupon_overdue
+        where
+          cre_date >= #{sTime}
+          and cre_date &lt;= #{eTime}
+    </select>
+
+    <!-- 券实名发放记录表 -->
+    <select id="queryCouponRealnameSendlogList" resultType="com.dms.data.push.process.entity.CouponRealnameSendlog">
+        select
+          *
+        from
+          coupon_realname_sendlog
+        where
+          create_time >= #{sTime}
+          and create_time &lt;= #{eTime}
+    </select>
+
+    <!-- 券审核记录表 -->
+    <select id="queryCouponVerifyRecordList" resultType="com.dms.data.push.process.entity.CouponVerifyRecord">
+        select
+          *
+        from
+          coupon_verify_record
+        where
+          create_time >= #{sTime}
+          and create_time &lt;= #{eTime}
+    </select>
+
+</mapper>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dms.data.consume.process.dao.CouponDao">
+
+    <!-- 券详情表 -->
+    <insert id="addCouponDetails" parameterType="com.dms.data.consume.process.entity.CouponDetail">
+      replace into coupon_detail
+      values
+      <foreach collection="list" item="item" separator=",">
+        (
+          #{item.id},
+          #{item.couponNo},
+          #{item.couponName},
+          #{item.status},
+          #{item.couponType},
+          #{item.dealerId},
+          #{item.totalPrice},
+          #{item.price},
+          #{item.fullPrice},
+          #{item.startDate},
+          #{item.endDate},
+          #{item.couponGetInvalidDay},
+          #{item.couponNumber},
+          #{item.messageType},
+          #{item.photo},
+          #{item.description},
+          #{item.obtainType},
+          #{item.obtainLimit},
+          #{item.sendType},
+          #{item.getType},
+          #{item.createTime},
+          #{item.createUser},
+          #{item.updateTime},
+          #{item.updateUser}
+        )
+      </foreach>
+    </insert>
+
+    <!-- 券仓库表 -->
+    <insert id="addCouponWarehouses" parameterType="com.dms.data.consume.process.entity.CouponWarehouse">
+      replace into coupon_warehouse
+      values
+      <foreach collection="list" item="item" separator=",">
+        (
+          #{item.id},
+          #{item.couponSn},
+          #{item.couponNo},
+          #{item.price},
+          #{item.couponPass},
+          #{item.logincode},
+          #{item.useStatus},
+          #{item.couponUseEndDate},
+          #{item.useTime}
+        )
+      </foreach>
+    </insert>
+
+    <!-- 券使用记录表 -->
+    <insert id="addCouponUseLogs" parameterType="com.dms.data.consume.process.entity.CouponUseLogs">
+      replace into coupon_use_logs
+      values
+      <foreach collection="list" item="item" separator=",">
+        (
+          #{item.id},
+          #{item.couponSn},
+          #{item.useType},
+          #{item.useTime},
+          #{item.useUser},
+          #{item.orderCode},
+          #{item.memo}
+        )
+      </foreach>
+    </insert>
+
+    <!-- 券限制条件表 -->
+    <insert id="addCouponConditions" parameterType="com.dms.data.consume.process.entity.CouponCondition">
+      replace into coupon_condition
+      values
+      <foreach collection="list" item="item" separator=",">
+        (
+          #{item.id},
+          #{item.couponNo},
+          #{item.type},
+          #{item.conditionType},
+          #{item.conditionValue},
+          #{item.status},
+          #{item.createTime},
+          #{item.createUser},
+          #{item.updateTime},
+          #{item.updateUser}
+        )
+      </foreach>
+    </insert>
+
+    <!-- 券资金流水表 -->
+    <insert id="addCouponAmountlogs" parameterType="com.dms.data.consume.process.entity.CouponAmountlog">
+      replace into coupon_amountlog
+      values
+      <foreach collection="list" item="item" separator=",">
+        (
+          #{item.id},
+          #{item.amId},
+          #{item.tradingDay},
+          #{item.couponSn},
+          #{item.amChange},
+          #{item.type},
+          #{item.desAftDrawable},
+          #{item.desBefDrawable},
+          #{item.srcAftDrawable},
+          #{item.srcBefDrawable},
+          #{item.desAccid},
+          #{item.srcAccid},
+          #{item.createTime},
+          #{item.completeDate},
+          #{item.rmk1},
+          #{item.rmk2},
+          #{item.status}
+        )
+      </foreach>
+    </insert>
+
+    <!-- 券订单表 -->
+    <insert id="addCouponOrders" parameterType="com.dms.data.consume.process.entity.CouponOrder">
+      replace into coupon_order
+      values
+      <foreach collection="list" item="item" separator=",">
+        (
+          #{item.orderNo},
+          #{item.couponSn},
+          #{item.couponType},
+          #{item.orderCloseNo},
+          #{item.orderCloseDate},
+          #{item.loginCode},
+          #{item.accId},
+          #{item.orderMoney},
+          #{item.orderCouponMoney},
+          #{item.profitClose},
+          #{item.returnMoney},
+          #{item.creDate},
+          #{item.hasTransfer},
+          #{item.transferDate},
+          #{item.transferCount},
+          #{item.remark},
+          #{item.serialNo}
+        )
+      </foreach>
+    </insert>
+
+    <!-- 券失效表 -->
+    <insert id="addCouponOverdues" parameterType="com.dms.data.consume.process.entity.CouponOverdue">
+      replace into coupon_overdue
+      values
+      <foreach collection="list" item="item" separator=",">
+        (
+          #{item.id},
+          #{item.couponSn},
+          #{item.overdueMoney},
+          #{item.creDate},
+          #{item.hasTransfer},
+          #{item.type},
+          #{item.transferDate},
+          #{item.transferCount},
+          #{item.remark}
+        )
+      </foreach>
+    </insert>
+
+    <!-- 券实名发放记录表 -->
+    <insert id="addCouponRealnameSendlogs" parameterType="com.dms.data.consume.process.entity.CouponRealnameSendlog">
+      replace into coupon_realname_sendlog
+      values
+      <foreach collection="list" item="item" separator=",">
+        (
+          #{item.id},
+          #{item.loginCode},
+          #{item.status},
+          #{item.rmk},
+          #{item.createTime},
+          #{item.updateTime},
+          #{item.dealerCode},
+          #{item.couponSn}
+        )
+      </foreach>
+    </insert>
+
+    <!-- 券审核记录表 -->
+    <insert id="addCouponVerifyRecords" parameterType="com.dms.data.consume.process.entity.CouponVerifyRecord">
+      replace into coupon_verify_record
+      values
+      <foreach collection="list" item="item" separator=",">
+        (
+          #{item.id},
+          #{item.couponNo},
+          #{item.status},
+          #{item.rmk},
+          #{item.createTime},
+          #{item.updateTime},
+          #{item.updateUser}
+        )
+      </foreach>
+    </insert>
+
+</mapper>
