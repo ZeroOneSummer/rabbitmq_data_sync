@@ -4,8 +4,8 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://数据库ip:3306/库名?allowMultiQueries=true&useUnicode=true&useSSL=false&characterEncoding=UTF-8&useAffectedRows=true
-    username: hzmall
-    password: hYZ!ns^ZziS3
+    username: 用户名
+    password: 密码
     druidusername: qazwsx
     druiduserpassword: qazwsx
     initialSize: 10
