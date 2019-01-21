@@ -23,9 +23,9 @@
 
         <!--数据库链接地址账号密码-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.2.47:3306/DFMALL_S"
-                        userId="dfmall_test"
-                        password="dfmall_test">
+                        connectionURL="jdbc:mysql://数据库ip:3306/库名"
+                        userId="用户名"
+                        password="密码">
         </jdbcConnection>
 
         <javaTypeResolver>
