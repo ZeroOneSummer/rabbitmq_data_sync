@@ -22,9 +22,9 @@ public class RabbitConfig {
 
 	@Bean
 	ConnectionFactory connectionFactory() {
-		CachingConnectionFactory connectionFactory = new CachingConnectionFactory();
+	    CachingConnectionFactory connectionFactory = new CachingConnectionFactory();
 
-		connectionFactory.setAddresses(address);
+	    connectionFactory.setAddresses(address);
 	    connectionFactory.setUsername(username);
 	    connectionFactory.setPassword(password);
 	    connectionFactory.setVirtualHost(vhost);
